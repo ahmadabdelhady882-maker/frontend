@@ -1,21 +1,27 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import AddPost from "./pages/AddPost";
-import CarriersList from "./pages/CarriersList";
+import { Routes, Route, Link } from "react-router-dom";
 
-export default function App(){
+function Home() {
+  return <h2>الصفحة الرئيسية</h2>;
+}
+
+function About() {
+  return <h2>من نحن</h2>;
+}
+
+function App() {
   return (
     <div>
-      <Navbar />
+      <nav>
+        <Link to="/">الرئيسية</Link> | <Link to="/about">عن الموقع</Link>
+      </nav>
+
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/add-post' element={<AddPost />} />
-        <Route path='/carriers' element={<CarriersList />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );
 }
+
+export default App;
