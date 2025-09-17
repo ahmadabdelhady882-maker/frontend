@@ -1,4 +1,5 @@
 {
+  npm install react-router-dom
   "name": "mining-shop-frontend",
   "version": "1.0.0",
   "private": true,
